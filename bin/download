@@ -143,7 +143,7 @@ guess_download_url() {
 
   local guessed_file=''
   if [ $platform = 'osx' ]; then
-    guessed_file="jq-osx-${arch}"
+    guessed_file="jq-macos-${arch}"
   elif [ $platform = 'linux' && -n "$arch" ]; then
     guessed_file="jq-linux-$arch"
   fi
@@ -163,7 +163,7 @@ download() {
     declare -r arch=$(get_arch)
     local guessed_file=''
     if [ $platform = osx ]; then
-      guessed_file="jq-osx-${arch}"
+      guessed_file="jq-macos-${arch}"
     elif [ $platform = linux ] && [ -n "$arch" ]; then
       guessed_file="jq-linux-${arch}"
     fi
